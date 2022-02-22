@@ -51,11 +51,11 @@ class HeaderVideo extends React.Component<any, HeaderVideoStates> {
     }
 
     randomBg() {
-        let videos = ["/assets/video/鲸落最终版 动态水印.webm",
-            "/assets/video/冬駅.webm",
-            "/assets/video/【明日方舟】迷迭香.webm",
-            "/assets/video/魔法女孩2.webm",
-            "/assets/video/neko 4k.webm",]
+        let videos = ["/storage/details/MyWebsiteFile/Videos/鲸落最终版 动态水印.webm",
+            "/storage/details/MyWebsiteFile/Videos/冬駅.webm",
+            "/storage/details/MyWebsiteFile/Videos/【明日方舟】迷迭香.webm",
+            "/storage/details/MyWebsiteFile/Videos/魔法女孩2.webm",
+            "/storage/details/MyWebsiteFile/Videos/neko 4k.webm",]
         let index = Math.floor(Math.random() * videos.length)
         return videos[index]
     }

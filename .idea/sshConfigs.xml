@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="yandage.top" id="1bc674bd-4dd9-46b1-93e9-6c9fa4afa157" keyPath="C:\Users\Yan_X\Documents\Password key\aliyun\yan.pem" port="22" nameFormat="DESCRIPTIVE" username="root" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

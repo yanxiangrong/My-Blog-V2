@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "SourceHanSansSC-VF";
+    src: url("/fonts/SourceHanSansSC-VF.otf") format("opentype");
+    src: url("/fonts/SourceHanSansSC-VF.otf.woff2") format("woff2");
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: SourceHanSansSC-VF, sans serif;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+body {
+    background: rgb(245, 245, 241);
+}
+
+body:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    content: "";
+    display: block;
+    position: fixed;
+    background: url("/assets/image/pattern-1.png") top center;
+}

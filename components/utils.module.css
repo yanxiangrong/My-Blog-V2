@@ -1,0 +1,10 @@
+.hidden1 {
+
+}
+
+
+@media (max-width: 50rem) {
+    .hidden1 {
+        display: none;
+    }
+}

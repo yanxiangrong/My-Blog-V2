@@ -66,19 +66,20 @@ class HeaderVideo extends React.Component<any, HeaderVideoStates> {
         return (
             <section style={{position: "relative", height: "70vh", maxHeight: '41.25rem', marginBottom: '40px'}}>
                 <div className={styles.headerTitle}>
-                    <Typography
-                        component="h2"
-                        variant="h3"
-                        color="inherit"
-                        align="left"
-                        noWrap
-                        className={styles.headerTitle2}
-                    >
+                    <div className={styles.headerTitle2}>
                         <TextTransition
                             text={this.state.title}
                             springConfig={presets.gentle}
                         />
-                    </Typography>
+                    </div>
+                    {/*<Typography*/}
+                    {/*    component="h2"*/}
+                    {/*    variant="h3"*/}
+                    {/*    color="inherit"*/}
+                    {/*    align="left"*/}
+                    {/*    noWrap*/}
+                    {/*>*/}
+                    {/*</Typography>*/}
                 </div>
                 <div className={styles.headerVideo}>
                     <video autoPlay loop playsInline muted={true}>

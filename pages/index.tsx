@@ -67,24 +67,26 @@ export default function Home({contentHtml}) {
                            elevation={8}>
                         <Contents/>
                     </Paper>
-                    <Paper className={styles.hidden1} sx={{
-                        width: '350px',
-                        borderRadius: "15px",
-                        padding: "8px",
-                        backgroundColor: "#dde1e7",
-                        display: 'flex',
-                        flexDirection: 'column',
-                        marginLeft: '1.5rem',
-                        alignItems: 'center'
-                    }}
-                           elevation={8}>
-                        <iframe style={{width: '300px', height: '300px'}} frameBorder={0}
-                                src={"/static/clock/index.html"}/>
-                        <Neko/>
-                    </Paper>
+                    <div className={styles.hidden1}>
+                        <Paper sx={{
+                            width: '350px',
+                            borderRadius: "15px",
+                            padding: "8px",
+                            backgroundColor: "#dde1e7",
+                            display: 'flex',
+                            flexDirection: 'column',
+                            marginLeft: '1.5rem',
+                            alignItems: 'center'
+                        }}
+                               elevation={8}>
+                            <iframe style={{width: '300px', height: '300px'}} frameBorder={0}
+                                    src={"/static/clock/index.html"}/>
+                            <Neko/>
+                        </Paper>
+                    </div>
                 </section>
                 <section style={{maxWidth: '1200px', margin: "2rem auto 1.5rem auto"}}>
-                    <Paper className={styles.hidden1} sx={{
+                    <Paper sx={{
                         borderRadius: "15px",
                         padding: "2.5rem 1rem",
                         backgroundColor: "#f5f0e8",

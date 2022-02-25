@@ -42,65 +42,80 @@ export async function getStaticProps() {
     }
 }
 
-export default function Home({contentHtml}) {
+interface HomeProps {
+    contentHtml: string
+}
 
-    return (
-        <>
-            <Head>
-                <title>小荣的网站</title>
-            </Head>
-            <HeaderNav title={"小荣的网站"}/>
-            <HeaderVideo/>
+class Home extends React.Component<HomeProps, any> {
+    constructor(props) {
+        super(props);
+    }
 
-            <main style={{paddingBottom: '40px', paddingLeft: '10px', paddingRight: '10px'}}>
-                <section
-                    style={{maxWidth: '1200px', margin: "0 auto 1.5rem auto", display: 'flex', flexDirection: "row"}}>
-                    <Paper sx={{
-                        width: '100%',
-                        borderRadius: "15px",
-                        padding: "8px",
-                        backgroundColor: "#e7e0dd",
-                        display: 'flex',
-                        flexDirection: 'column',
-                        // alignItems: 'center'
-                    }}
-                           elevation={8}>
-                        <Contents/>
-                    </Paper>
-                    <div className={styles.hidden1}>
+    render() {
+        let {contentHtml} = this.props
+        return (
+            <>
+                <Head>
+                    <title>小荣的网站</title>
+                </Head>
+                <HeaderNav title={"小荣的网站"}/>
+                <HeaderVideo/>
+
+                <main style={{paddingBottom: '40px', paddingLeft: '10px', paddingRight: '10px'}}>
+                    <section
+                        style={{
+                            maxWidth: '1200px',
+                            margin: "0 auto 1.5rem auto",
+                            display: 'flex',
+                            flexDirection: "row"
+                        }}>
                         <Paper sx={{
-                            width: '350px',
+                            width: '100%',
                             borderRadius: "15px",
                             padding: "8px",
-                            backgroundColor: "#dde1e7",
+                            backgroundColor: "#e7e0dd",
                             display: 'flex',
                             flexDirection: 'column',
-                            marginLeft: '1.5rem',
-                            alignItems: 'center'
+                            // alignItems: 'center'
                         }}
                                elevation={8}>
-                            <iframe style={{width: '300px', height: '300px'}} frameBorder={0}
-                                    src={"/static/clock/index.html"}/>
-                            <Neko/>
+                            <Contents/>
                         </Paper>
-                    </div>
-                </section>
-                <section style={{maxWidth: '1200px', margin: "2rem auto 1.5rem auto"}}>
-                    <Paper sx={{
-                        borderRadius: "15px",
-                        padding: "2.5rem 1rem",
-                        backgroundColor: "#f5f0e8",
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}
-                           elevation={8}>
-                        <div className={"markdown-body"} dangerouslySetInnerHTML={{__html: contentHtml}}/>
-                    </Paper>
-                </section>
+                        <div className={styles.hidden1}>
+                            <Paper sx={{
+                                width: '350px',
+                                borderRadius: "15px",
+                                padding: "8px",
+                                backgroundColor: "#dde1e7",
+                                display: 'flex',
+                                flexDirection: 'column',
+                                marginLeft: '1.5rem',
+                                alignItems: 'center'
+                            }}
+                                   elevation={8}>
+                                <iframe style={{width: '300px', height: '300px'}} frameBorder={0}
+                                        src={"/static/clock/index.html"}/>
+                                <Neko/>
+                            </Paper>
+                        </div>
+                    </section>
+                    <section style={{maxWidth: '1200px', margin: "2rem auto 1.5rem auto"}}>
+                        <Paper sx={{
+                            borderRadius: "15px",
+                            padding: "2.5rem 1rem",
+                            backgroundColor: "#f5f0e8",
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                               elevation={8}>
+                            <div className={"markdown-body"} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+                        </Paper>
+                    </section>
 
-            </main>
+                </main>
 
-            <Footer/>
-        </>
-    )
+                <Footer/>
+            </>
+        )
+    }
 }

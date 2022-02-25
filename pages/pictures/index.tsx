@@ -3,16 +3,16 @@ import HeaderNav from "../../components/HeaderNav";
 import * as React from "react";
 import {Paper} from "@mui/material";
 import styles from "../../components/HeaderVideo.module.css";
-import stylesUtils from "../../components/HeaderVideo.module.css";
+import stylesUtils from "../../components/utils.module.css";
 import Typography from "@mui/material/Typography";
 import Footer from "../../components/Footer";
 import Button from "@mui/material/Button";
 
-export default function Files() {
+export default function Pictures() {
     return (
         <>
             <Head>
-                <title>文件站</title>
+                <title>图库</title>
             </Head>
             <HeaderNav title={"小荣的网站"}/>
             <section style={{position: "relative", height: "50vh", maxHeight: '27.5rem', marginBottom: '40px'}}>

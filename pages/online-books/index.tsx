@@ -26,7 +26,7 @@ class OnlineBooks extends React.Component<any, OnlineBooksState> {
     }
 
     componentDidMount() {
-        fetch("https://yandage.top/storage/file/MyWebsiteFile/OnlineBooks/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86/index.json").then(r => {
+        fetch("/storage/file/MyWebsiteFile/OnlineBooks/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86/index.json").then(r => {
             r.json().then(r => {
                 this.setState({book: r})
             })
@@ -50,7 +50,9 @@ class OnlineBooks extends React.Component<any, OnlineBooksState> {
 
             images = book.contents[page - 1].pages.map(item =>
                 <img key={item}
-                     src={"https://yandage.top/storage/file/MyWebsiteFile/OnlineBooks/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86/" + item}
+                     style={{objectFit: "contain", width: "100%"}}
+                     loading={"lazy"}
+                     src={"/storage/file/MyWebsiteFile/OnlineBooks/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86/" + item}
                      alt={""}/>
             )
         }
@@ -74,6 +76,7 @@ class OnlineBooks extends React.Component<any, OnlineBooksState> {
                         <Paper sx={{
                             borderRadius: "15px",
                             padding: "1rem .5rem",
+                            width:"100%",
                             backgroundColor: "#f5f0e8",
                             display: 'flex',
                             flexDirection: 'column',

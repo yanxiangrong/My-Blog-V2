@@ -38,15 +38,30 @@
     const sec = document.querySelector(".sec");
     const min = document.querySelector(".min");
     const hr = document.querySelector(".hr");
-    setInterval(function(){
-        let time  = new Date();
-        let secs = time.getSeconds() * 6;
-        let mins = time.getMinutes() * 6;
-        let hrs = time.getHours() * 30;
-        sec.style.transform = `rotateZ(${secs}deg)`;
-        min.style.transform = `rotateZ(${mins}deg)`;
-        hr.style.transform = `rotateZ(${hrs+(mins/12)}deg)`;
-    });
+
+    let time  = new Date();
+    let secs = time.getHours() * 3600 + time.getMinutes() * 60 + time.getSeconds();
+
+    let secAngle = secs * 6
+    let minAngle = secAngle / 60
+    let hrAngle = minAngle / 12
+    sec.style.transform = `rotateZ(${secAngle}deg)`;
+    min.style.transform = `rotateZ(${minAngle}deg)`;
+    hr.style.transform = `rotateZ(${hrAngle}deg)`;
+
+    setTimeout(() => {
+        sec.style.transition = "transform cubic-bezier(0.68, 0, 0.27, 1.55) 0.2s"
+    }, 500)
+
+    setInterval(() => {
+        secs++
+        let secAngle = secs * 6
+        let minAngle = secAngle / 60
+        let hrAngle = minAngle / 12
+        sec.style.transform = `rotateZ(${secAngle}deg)`;
+        min.style.transform = `rotateZ(${minAngle}deg)`;
+        hr.style.transform = `rotateZ(${hrAngle}deg)`;
+    }, 1000);
 </script>
 </body>
 </html>

@@ -119,3 +119,5 @@ class Home extends React.Component<HomeProps, any> {
         )
     }
 }
+
+export default Home;

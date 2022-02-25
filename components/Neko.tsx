@@ -59,7 +59,6 @@ class Neko extends React.Component<any, NekoState> {
                 let timeHours: string
                 let hours = time.getHours()
                 let minutes = time.getMinutes()
-                console.log(hours)
                 if (hours >= 3 && hours < 6) {
                     timePrefix = "凌晨"
                 } else if (hours >= 6 && hours < 8) {

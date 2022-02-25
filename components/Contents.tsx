@@ -55,7 +55,7 @@ export default function Contents() {
                     width: '30%',
                     borderRadius: '8px',
                     objectFit: 'cover',
-                }} src={"/assets/image/86546978_p0.jpg"} alt={''}/>
+                }} src={"/assets/image/憧憬_74158496.jpg"} alt={''}/>
             </div>
 
             <div style={{

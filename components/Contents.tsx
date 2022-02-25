@@ -24,7 +24,7 @@ export default function Contents() {
                     borderRadius: '8px',
                     objectFit: 'cover',
                 }} src={"/assets/image/a.35e90d8b.jpg"} alt={''}/>
-                <div style={{marginLeft: ".5rem"}}>
+                <div style={{marginLeft: ".5rem", width: "100%"}}>
                     <h3 style={{margin: ".5rem 0 0 0"}}>
                         ESP8266气象站
                     </h3>
@@ -42,11 +42,14 @@ export default function Contents() {
                 borderRadius: '10px',
                 boxShadow: 'inset -3px -3px 7px #ffffff73, inset 3px 3px 5px rgba(94,104,121,0.288)'
             }}>
-                <div>
-                    <p style={{margin: " 0 .5rem 0 0"}}>
-                        pixiv股份有限公司是一家总部位于东京都涉谷区的、属于安利美特集团的网络风险投资企业集团公司。目前正在运营提供插图交流服务的会员制网站“pixiv”及其相关服务。
+                <div style={{marginRight: ".5rem", width: "100%"}}>
+                    <h3 style={{margin: ".5rem 0 0 0"}}>
+                        书架
+                    </h3>
+                    <p style={{margin: ".5rem 0 0 0"}}>
+                        存放着一些PDF电子书，有技术类的像一些安卓开发，编程语言等等，也有一些漫画。欢迎大家翻阅。
                     </p>
-                    <Button>前往网站</Button>
+                    <Button href={"/storage/folder/E%20Book/"}>前往网站</Button>
                 </div>
                 <img style={{
                     width: '30%',
@@ -67,7 +70,7 @@ export default function Contents() {
                     borderRadius: '8px',
                     objectFit: 'cover',
                 }} src={"/assets/image/86546978_p0.jpg"} alt={''}/>
-                <div style={{marginLeft: ".5rem"}}>
+                <div style={{marginLeft: ".5rem", width: "100%"}}>
                     <p style={{margin: ".5rem 0 0 0"}}>
                         pixiv股份有限公司是一家总部位于东京都涉谷区的、属于安利美特集团的网络风险投资企业集团公司。目前正在运营提供插图交流服务的会员制网站“pixiv”及其相关服务。
                     </p>

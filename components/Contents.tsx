@@ -69,12 +69,15 @@ export default function Contents() {
                     width: '30%',
                     borderRadius: '8px',
                     objectFit: 'cover',
-                }} src={"/assets/image/86546978_p0.jpg"} alt={''}/>
+                }} src={"/assets/image/d52a2834349b033b5bb596a0c88721d3d539b600173d.jpg"} alt={''}/>
                 <div style={{marginLeft: ".5rem", width: "100%"}}>
+                    <h3 style={{margin: ".5rem 0 0 0"}}>
+                        在线阅读漫画
+                    </h3>
                     <p style={{margin: ".5rem 0 0 0"}}>
-                        pixiv股份有限公司是一家总部位于东京都涉谷区的、属于安利美特集团的网络风险投资企业集团公司。目前正在运营提供插图交流服务的会员制网站“pixiv”及其相关服务。
+                        这里有一个在线阅读漫画的测试页面，我放了一本《别当欧尼酱了！》。该漫画是由 ねことうふ（猫豆腐） 创作的一部喜剧漫画作品。
                     </p>
-                    <Button>前往网站</Button>
+                    <Button href={"/online-books"}>前往网站</Button>
                 </div>
             </div>
         </>

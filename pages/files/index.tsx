@@ -14,7 +14,7 @@ export default function Files() {
             <Head>
                 <title>文件站</title>
             </Head>
-            <HeaderNav title={"小荣的网站"}/>
+            <HeaderNav hideHeight={150} title={"小荣的网站"}/>
             <section style={{position: "relative", height: "50vh", maxHeight: '27.5rem', marginBottom: '40px'}}>
                 <div className={styles.headerTitle}>
                     <Typography

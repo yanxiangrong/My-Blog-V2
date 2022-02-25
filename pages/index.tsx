@@ -58,7 +58,7 @@ class Home extends React.Component<HomeProps, any> {
                 <Head>
                     <title>小荣的网站</title>
                 </Head>
-                <HeaderNav title={"小荣的网站"}/>
+                <HeaderNav hideHeight={200} title={"小荣的网站"}/>
                 <HeaderVideo/>
 
                 <main style={{paddingBottom: '40px', paddingLeft: '10px', paddingRight: '10px'}}>

@@ -16,6 +16,7 @@ const sections = [
 
 interface HeaderProps {
     title: string;
+    hideHeight: number
 }
 
 interface HeaderStates {
@@ -34,7 +35,7 @@ class HeaderNav extends React.Component<HeaderProps, HeaderStates> {
 
     handleScroll = () => {
         const scrollTop = document.documentElement.scrollTop
-        if (scrollTop > 200) {
+        if (scrollTop > this.props.hideHeight) {
             this.setState({transparent: false})
         } else {
             this.setState({transparent: true})
@@ -42,11 +43,17 @@ class HeaderNav extends React.Component<HeaderProps, HeaderStates> {
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', this.handleScroll)
+        if (this.props.hideHeight != 0) {
+            document.addEventListener('scroll', this.handleScroll)
+        } else {
+            this.setState({transparent: false})
+        }
     }
 
     componentWillUnmount() {
-        document.removeEventListener('scroll', this.handleScroll)
+        if (this.props.hideHeight != 0) {
+            document.removeEventListener('scroll', this.handleScroll)
+        }
     }
 
     render() {

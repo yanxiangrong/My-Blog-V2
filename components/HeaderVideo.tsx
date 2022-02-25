@@ -51,11 +51,11 @@ class HeaderVideo extends React.Component<any, HeaderVideoStates> {
     }
 
     randomBg() {
-        let videos = ["/storage/details/MyWebsiteFile/Videos/鲸落最终版 动态水印.webm",
-            "/storage/details/MyWebsiteFile/Videos/冬駅.webm",
-            "/storage/details/MyWebsiteFile/Videos/【明日方舟】迷迭香.webm",
-            "/storage/details/MyWebsiteFile/Videos/魔法女孩2.webm",
-            "/storage/details/MyWebsiteFile/Videos/neko 4k.webm",]
+        let videos = ["/storage/file/MyWebsiteFile/Videos/鲸落最终版 动态水印.webm",
+            "/storage/file/MyWebsiteFile/Videos/冬駅.webm",
+            "/storage/file/MyWebsiteFile/Videos/【明日方舟】迷迭香.webm",
+            "/storage/file/MyWebsiteFile/Videos/魔法女孩2.webm",
+            "/storage/file/MyWebsiteFile/Videos/neko 4k.webm",]
         let index = Math.floor(Math.random() * videos.length)
         return videos[index]
     }
@@ -66,19 +66,20 @@ class HeaderVideo extends React.Component<any, HeaderVideoStates> {
         return (
             <section style={{position: "relative", height: "70vh", maxHeight: '41.25rem', marginBottom: '40px'}}>
                 <div className={styles.headerTitle}>
-                    <Typography
-                        component="h2"
-                        variant="h3"
-                        color="inherit"
-                        align="left"
-                        noWrap
-                        className={styles.headerTitle2}
-                    >
+                    <div className={styles.headerTitle2}>
                         <TextTransition
                             text={this.state.title}
                             springConfig={presets.gentle}
                         />
-                    </Typography>
+                    </div>
+                    {/*<Typography*/}
+                    {/*    component="h2"*/}
+                    {/*    variant="h3"*/}
+                    {/*    color="inherit"*/}
+                    {/*    align="left"*/}
+                    {/*    noWrap*/}
+                    {/*>*/}
+                    {/*</Typography>*/}
                 </div>
                 <div className={styles.headerVideo}>
                     <video autoPlay loop playsInline muted={true}>

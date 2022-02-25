@@ -3,7 +3,7 @@ import HeaderNav from "../../components/HeaderNav";
 import * as React from "react";
 import {Paper} from "@mui/material";
 import styles from "../../components/HeaderVideo.module.css";
-import stylesUtils from "../../components/HeaderVideo.module.css";
+import stylesUtils from "../../components/utils.module.css";
 import Typography from "@mui/material/Typography";
 import Footer from "../../components/Footer";
 import Button from "@mui/material/Button";

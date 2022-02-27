@@ -57,6 +57,7 @@ class Home extends React.Component<HomeProps, any> {
             <>
                 <Head>
                     <title>小荣的网站</title>
+                    <meta name="description" content="小荣的博客网站，也会用来存放一些文件或者其他资源。" />
                 </Head>
                 <HeaderNav hideHeight={200} title={"小荣的网站"}/>
                 <HeaderVideo/>

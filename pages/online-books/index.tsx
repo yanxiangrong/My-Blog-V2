@@ -1,61 +1,79 @@
 import Head from "next/head";
-import {Divider, Paper} from "@mui/material";
+import {Divider, Pagination, Paper} from "@mui/material";
 import React from "react";
 import HeaderNav from "../../components/HeaderNav";
 import Footer from "../../components/Footer";
-import Button from "@mui/material/Button";
-import Image from 'next/image'
-import styles from '../../styles/book.module.css'
-import {any} from "prop-types";
+import ComicsPaper from "../../components/ComicsPaper";
 
 interface OnlineBooksState {
-    book: Book
+    comics: Comics
+    count: number
+    page: number
 }
 
-interface BookPart {
-    part_name: string,
-    images: {
+interface ComicsInfo {
+    name: string
+    path: string
+    contents: string[]
+    info: string
+    cover: {
         file: string
         size: {
             width: number
             height: number
         }
-    }[]
+    }
 }
 
-interface Book {
-    name: string
-    contents: BookPart[]
+interface Comics {
+    comics: ComicsInfo[]
 }
+
 
 class OnlineBooks extends React.Component<any, OnlineBooksState> {
     constructor(props) {
         super(props);
-        this.state = {book: null}
+        this.state = {comics: null, page: 1, count: 1}
     }
 
-    url = "/storage/file/MyWebsiteFile/OnlineBooks/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86/"
+    url = "/storage/file/MyWebsiteFile/OnlineBooks/漫画/"
+    countOnePage = 7
 
     componentDidMount() {
-        fetch(this.url + "index.json").then(r => {
-            r.json().then((r: Book) => {
-                this.setState({book: r})
+        fetch(this.url + "comics_index.json").then(r => {
+            r.json().then((r: Comics) => {
+                this.setState({comics: r})
+                this.setState({count: Math.ceil(r.comics.length / 7)})
             })
         })
-        // this.setState({pages: 14})
     }
 
+    handleChange = (event, value) => {
+        this.setState({page: value})
+    };
+
+    handleChange2 = (event, value) => {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        this.setState({page: value})
+    };
 
     render() {
-        const buttons = []
-        if (this.state.book) {
-            let contents: BookPart[] = this.state.book.contents
-            for (let i = 1; i <= contents.length; i++) {
-                let button = <Button
-                    href={"/online-books/view?url=" + this.url + "&page=" + i.toString()}>{contents[i - 1].part_name}</Button>
-                buttons.push(button)
+        const comicsPapers = []
+        let {count, page, comics} = this.state
+
+        if (comics) {
+            const start = (page - 1) * this.countOnePage
+            const end = this.countOnePage + start < comics.comics.length ? this.countOnePage + start : comics.comics.length
+            for (const iComics of comics.comics.slice(start, end)) {
+                let paper = (
+                    <div key={iComics.name} style={{marginBottom: "1em"}}>
+                        <ComicsPaper comics={iComics} url={this.url + iComics.path + "/"}/>
+                    </div>
+                )
+                comicsPapers.push(paper)
             }
         }
+
 
         return (
             <>
@@ -71,35 +89,11 @@ class OnlineBooks extends React.Component<any, OnlineBooksState> {
                         flexDirection: "column",
                         alignItems: "center"
                     }}>
+                        <Pagination count={count} page={page} onChange={this.handleChange} color="primary"/>
                         <div style={{height: "1rem"}}/>
-                        <Paper sx={{
-                            borderRadius: "15px",
-                            padding: "1rem .5rem",
-                            // width: "100%",
-                            backgroundColor: "#f5f0e8",
-                        }}
-                               elevation={8}>
-                            <h2 style={{color: 'cornflowerblue', textAlign: "center"}}>《别当欧尼酱了！》</h2>
-                            <div className={styles.info}>
-                                <div>
-                                    <Image height={376} width={265} src={"/assets/image/別當歐尼醬了_商業版_封面.png"}
-                                           alt={'别当欧尼酱了'}/>
-                                </div>
-                                <p>漫画简介：《别当欧尼酱了！》是由猫豆腐老师于2017年执笔并发行在日本地区的漫画作品。一觉醒来，家里蹲变成了萌萝莉？！这究竟是道德的沦丧，还是人性的泯灭？《深夜雀食堂》《六驱好朋友》作者·ねことうふ老师的P站新作！（作者P站id=159912）
-                                    。。<br/>前面14话来自正版电子书，后面的来自某粉色软件，画质要差一些。</p>
-                            </div>
-                            <div style={{height: ".5rem"}}/>
-                            <Divider/>
-                            <div style={{height: ".5rem"}}/>
-                            <div style={{textAlign: "center"}}>
-                                <Button
-                                    variant="contained"
-                                    href={"/online-books/view?url=" + this.url}>开始阅读</Button>
-                                <div style={{height: ".5rem"}}/>
-                            </div>
-                            {buttons}
-                        </Paper>
+                        {comicsPapers}
                         <div style={{height: "1rem"}}/>
+                        <Pagination count={count} page={page} onChange={this.handleChange2} color="primary"/>
                     </section>
                 </main>
 

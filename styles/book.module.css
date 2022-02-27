@@ -1,0 +1,62 @@
+.placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    z-index: -10;
+    background-color: gray
+}
+
+.placeholder > h1 {
+    font-size: 64px;
+    font-weight: normal;
+    margin-top: -32px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 45rem) {
+    .info > div {
+        width: 40%;
+    }
+
+    .info > p {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 45rem) {
+    .info > div {
+        min-width: 15rem;
+        width: 15rem;
+    }
+}
+
+@media screen and (min-width: 35rem) {
+    .info {
+        display: flex;
+        flex-direction: row;
+    }
+    .info > p {
+        margin-left: .5rem;
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info > div {
+        width: auto;
+    }
+
+    .info > p {
+        width: 100%;
+    }
+}

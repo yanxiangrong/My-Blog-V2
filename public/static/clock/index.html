@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
+<html>
 <head>
     <meta charset="utf-8">
     <title>Neumorphism Analog Clock | CodingNepal</title>
@@ -39,10 +39,10 @@
     const min = document.querySelector(".min");
     const hr = document.querySelector(".hr");
 
-    let time  = new Date();
-    let secs = time.getHours() * 3600 + time.getMinutes() * 60 + time.getSeconds();
+    let startTime = new Date();
+    let startSecs = startTime.getHours() * 3600 + startTime.getMinutes() * 60 + startTime.getSeconds();
 
-    let secAngle = secs * 6
+    let secAngle = startSecs * 6
     let minAngle = secAngle / 60
     let hrAngle = minAngle / 12
     sec.style.transform = `rotateZ(${secAngle}deg)`;
@@ -54,7 +54,9 @@
     }, 500)
 
     setInterval(() => {
-        secs++
+        let currTime = new Date();
+        let diff = Math.floor(currTime.getTime() - startTime.getTime()) / 1000
+        let secs = diff + startSecs
         let secAngle = secs * 6
         let minAngle = secAngle / 60
         let hrAngle = minAngle / 12

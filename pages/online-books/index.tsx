@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import Button from "@mui/material/Button";
 import Image from 'next/image'
 import styles from '../../styles/book.module.css'
-import {any} from "prop-types";
 
 interface OnlineBooksState {
     book: Book

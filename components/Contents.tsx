@@ -5,13 +5,20 @@ export default function Contents() {
     return (
         <>
             <h2 style={{color: 'cornflowerblue', textAlign: "center"}}>网站导航</h2>
-            <blockquote style={{
-                padding: '.6rem 1rem',
-                borderLeft: '4px solid cornflowerblue',
-                backgroundColor: 'rgba(0,120,231,.05)'
-            }}>
-                <p style={{margin: '4px 0'}}>本站及附属子网站</p>
-            </blockquote>
+
+            <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", alignItems: "center"}}>
+                <blockquote style={{
+                    padding: '.6rem 1rem',
+                    borderLeft: '4px solid cornflowerblue',
+                    backgroundColor: 'rgba(0,120,231,.05)',
+                    flexGrow: "1"
+                }}>
+                    <p style={{margin: '4px 0'}}>本站及附属子网站</p>
+                </blockquote>
+
+                <iframe frameBorder="no" width="280" height="86"
+                        src="//music.163.com/outchain/player?type=2&id=1359165195&auto=1&height=66"></iframe>
+            </div>
 
             <div style={{
                 display: "flex", flexDirection: "row",

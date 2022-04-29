@@ -57,7 +57,7 @@ class Home extends React.Component<HomeProps, any> {
             <>
                 <Head>
                     <title>小荣的网站</title>
-                    <meta name="description" content="小荣的博客网站，也会用来存放一些文件或者其他资源。" />
+                    <meta name="description" content="小荣的博客网站，也会用来存放一些文件或者其他资源。"/>
                 </Head>
                 <HeaderNav hideHeight={200} title={"小荣的网站"}/>
                 <HeaderVideo/>
@@ -99,6 +99,22 @@ class Home extends React.Component<HomeProps, any> {
                                 <Neko/>
                             </Paper>
                         </div>
+                    </section>
+                    <section style={{maxWidth: '1200px', margin: "2rem auto 1.5rem auto"}}>
+                        <Paper sx={{
+                            borderRadius: "15px",
+                            padding: "2.5rem 1rem",
+                            backgroundColor: "#f5f0e8",
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                               elevation={8}>
+                            <h2 style={{color: 'cornflowerblue', textAlign: "center", marginTop: 0}}> 几首好听的音乐 </h2>
+                            <div style={{display: "flex", justifyContent: "center"}}>
+                                <iframe frameBorder="no" height="210" style={{width: '48rem'}}
+                                        src="//yandage.top/storage/file/MyWebsiteFile/Musics/Aplayer/aplayer.html"></iframe>
+                            </div>
+                        </Paper>
                     </section>
                     <section style={{maxWidth: '1200px', margin: "2rem auto 1.5rem auto"}}>
                         <Paper sx={{
